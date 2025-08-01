@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aditya Ujawane Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/05f7573a48.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- ========== HEADER SECTION ========== -->
+  <div id="header">
+    <!-- Fixed Navigation Bar -->
+    <nav>
+      <div class="nav-wrapper container">
+        <!-- Logo that changes based on theme -->
+        <img src="images/logo.png" class="logo" id="logo-img" />
+        <!-- Mobile menu hamburger icon -->
+        <i class="fas fa-bars" onclick="openmenu()"></i>
+        <!-- Navigation menu (slides in on mobile) -->
+        <ul id="sidemenu">
+          <li><i class="fas fa-times" onclick="closemenu()"></i></li>
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <!-- Main header content -->
+    <div class="container">
+      <div class="header-text">
+        <!-- Main heading with highlighted name -->
+        <h1>Hi, I'm <span class="highlight">Aditya Ujawane</span></h1>
+        <!-- Typing animation text -->
+        <p class="typing-rotate"><span id="typed-text"></span><span class="cursor">|</span></p>
+        <!-- Introduction paragraph -->
+        <p class="intro-bio">
+          Computer Science student at SDSU passionate about full-stack development, AI, machine learning, and building real-world software solutions.
+        </p>
+        <!-- Resume download button -->
+        <a href="images/my-cv.pdf" download="Aditya_Ujawane_Resume.pdf" class="btn btn2">Download CV</a>
+      </div>
+      <!-- Social media icons in header -->
+      <div class="social-icons-upper">
+        <a href="https://www.linkedin.com/in/aditya-ujawane"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/aujawane"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <!-- Profile image column -->
+        <div class="about-col-1">
+          <img src="images/Headshot1.jpg" alt="Aditya Ujawane Profile Picture" />
+        </div>
+        <!-- About content column -->
+        <div class="about-col-2">
+          <h1 class="sub-title">About Me</h1>
+          <div class="about-me">
+            <ul>
+              <li>
+                <p>I'm a Computer Science junior at <strong>San Diego State University</strong> who's genuinely excited about building things that matter. Whether it's a side project, a class assignment, or just exploring a new framework, I love the process of turning ideas into working software.</p>
+              </li>
+              <li>
+                <p>I'm always looking to grow—as a developer, a teammate, and a problem solver. Leading peer study sessions as a Supplemental Instruction Leader has taught me how much I enjoy helping others and learning through collaboration.</p>
+              </li>
+              <li>
+                <p>At the core, I'm just someone who's curious, motivated, and eager to build cool stuff that makes a difference.</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tab navigation for Skills, Experience, Education -->
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
+            <p class="tab-links" onclick="opentab(event, 'experience')">Experience</p>
+            <p class="tab-links" onclick="opentab(event, 'education')">Education</p>
+          </div>
+
+          <!-- Skills tab content -->
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>Languages</span><br>Python, Java, C++, JavaScript, HTML, CSS, SQL, R, MATLAB</li>
+              <li><span>Frameworks & Libraries</span><br>Spring Boot, PyTorch, TorchVision, Flask, React, Express.js, MongoDB</li>
+              <li><span>Tools & Platforms</span><br>Git, GitHub, IntelliJ, CLion, RESTful APIs, Vercel, Render</li>
+              <li><span>Concepts</span><br>OOP, Machine Learning, CNN's, Model Training, Data Processing, API Integration, Deployment, Full-Stack App Architecture, JWT Authentication, Real-Time Updates</li>
+            </ul>
+          </div>
+
+          <!-- Experience tab content -->
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li>
+                <span>Supplemental Instruction Leader [2024 - Present]</span><br>
+                At SDSU, I support students in Calculus I through weekly collaborative sessions that clarify key concepts and improve performance.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Education tab content -->
+          <div class="tab-contents" id="education">
+            <ul>
+              <li>
+                <span>San Diego State University</span><br>
+                <i><strong>Expected Graduation: May 2027 | GPA: 3.6</strong></i><br>
+                I'm currently pursuing a B.S. in Computer Science at SDSU, where I've consistently made the Dean's List.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio -->
+  <div id="portfolio">
+    <div class="container">
+      <h1 class="sub-title">My Work</h1>
+      <div class="work-list">
+        <div class="work">
+          <img src="images/Animal_Classifier_Art.jpg" />
+          <div class="layer">
+            <h3><strong>AI Animal Classifier</strong></h3>
+            <p>Trained on CIFAR-10 using PyTorch. Deployed via Flask REST API.</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="images/Financial_Tracker_Art.jpg" />
+          <div class="layer">
+            <h3><strong>Expense Tracker Application</strong></h3>
+            <p>Built with Java, Spring Boot, MySQL, and JavaScript (CRUD).</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="images/Task_Tracker_Art.jpeg" />
+          <div class="layer">
+            <h3><strong>Task Tracker App</strong></h3>
+            <p>React, Node.js, MongoDB app with JWT auth and real-time updates.</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </div>
+        <a href="https://github.com/aujawane" target="_blank" class="btn">See more</a> 
+    </div>
+  </div>
+
+  <!-- Theme Toggle Button -->
+  <div class="theme-toggle-fixed">
+    <button id="theme-toggle-btn" onclick="toggleTheme()">
+      <i class="fas fa-sun" id="theme-icon"></i>
+    </button>
+  </div>
+
+  <!-- Contact -->
+  <div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          <h1 class="sub-title">Contact Me</h1>
+          <p><i class="fa-solid fa-paper-plane"></i>aujawane222@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i> +1 (619) 710 - 5568</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/aditya-ujawane"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/aujawane"><i class="fa-brands fa-github"></i></a>
+          </div>
+          <a href="images/my-cv.pdf" download="Aditya_Ujawane_Resume.pdf" class="btn btn2">Download CV</a>
+        </div>
+        <div class="contact-right">
+          <form name = "submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required />
+            <input type="email" name="Email" placeholder="Your Email" required />
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>
+          </form>
+          <span id = "msg"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 Aditya Ujawane. All rights reserved.
+    </footer>
+  </div>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // ===== TYPING ANIMATION =====
+    const phrases = ["Full Stack Developer", "Machine Learning Enthusiast", "AI Enthusiast", "Aspiring Software Developer"];
+    const typedText = document.getElementById("typed-text");
+    let currentPhrase = 0;
+    let currentLetter = 0;
+    let isDeleting = false;
+
+    // Function to handle typing animation
+    function type() {
+      const current = phrases[currentPhrase];
+      typedText.textContent = current.substring(0, currentLetter);
+
+      if (!isDeleting && currentLetter < current.length) {
+        currentLetter++;
+        setTimeout(type, 100);  // Typing speed
+      } else if (isDeleting && currentLetter > 0) {
+        currentLetter--;
+        setTimeout(type, 50);   // Deleting speed (faster)
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) currentPhrase = (currentPhrase + 1) % phrases.length;
+        setTimeout(type, 1000); // Pause between phrases
+      }
+    }
+    type(); // Start the typing animation
+
+    // ===== TAB FUNCTIONALITY =====
+    // Function to switch between Skills, Experience, Education tabs
+    function opentab(evt, tabname) {
+      const tablinks = document.getElementsByClassName("tab-links");
+      const tabcontents = document.getElementsByClassName("tab-contents");
+      
+      // Remove active class from all tabs and content
+      for (let tablink of tablinks) tablink.classList.remove("active-link");
+      for (let tabcontent of tabcontents) tabcontent.classList.remove("active-tab");
+      
+      // Add active class to clicked tab and corresponding content
+      evt.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    // ===== MOBILE MENU FUNCTIONALITY =====
+    const sidemenu = document.getElementById("sidemenu");
+    
+    // Open mobile menu (slide in from right)
+    function openmenu() {
+      sidemenu.style.right = "-30px";  // Slide to show menu
+      document.getElementById("menu-icon").style.display = "none";
+    }
+
+    // Close mobile menu (slide out to right)
+    function closemenu() {
+      sidemenu.style.right = "-100%";  // Hide menu completely
+      document.getElementById("menu-icon").style.display = "block";
+    }
+
+    // ===== THEME TOGGLE FUNCTIONALITY =====
+    // Function to switch between dark and bright themes
+    function toggleTheme() {
+      const body = document.body;
+      const themeIcon = document.getElementById('theme-icon');
+      const logoImg = document.getElementById('logo-img');
+      const currentTheme = body.getAttribute('data-theme');
+      
+      if (currentTheme === 'bright') {
+        // Switch to dark mode
+        body.removeAttribute('data-theme');
+        themeIcon.className = 'fas fa-sun';          // Sun icon for dark mode
+        logoImg.src = 'images/logo.png';             // Dark theme logo
+        localStorage.setItem('theme', 'dark');       // Save preference
+      } else {
+        // Switch to bright mode
+        body.setAttribute('data-theme', 'bright');
+        themeIcon.className = 'fas fa-moon';         // Moon icon for bright mode
+        logoImg.src = 'images/bright-logo.png';      // Bright theme logo
+        localStorage.setItem('theme', 'bright');     // Save preference
+      }
+    }
+
+    // ===== LOAD SAVED THEME ON PAGE LOAD =====
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedTheme = localStorage.getItem('theme');
+      const themeIcon = document.getElementById('theme-icon');
+      const logoImg = document.getElementById('logo-img');
+      
+      // Apply saved theme or default to dark
+      if (savedTheme === 'bright') {
+        document.body.setAttribute('data-theme', 'bright');
+        themeIcon.className = 'fas fa-moon';
+        logoImg.src = 'images/bright-logo.png';
+      } else {
+        themeIcon.className = 'fas fa-sun';
+        logoImg.src = 'images/logo.png';
+      }
+    });
+
+  </script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyDSFfrPIzN4_SxQ_TWYTaiyOvPE_-yfM3vlVZSZ9Ph6bnJqjw6rrV3G4GKeEk8y9LU/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      
+      // Capture form data BEFORE resetting the form
+      const formData = new FormData(form)
+      
+      // Show success message immediately (not waiting for server response)
+      msg.innerHTML = "Message sent successfully"
+      msg.classList.add('show')
+      
+      // Reset form immediately
+      form.reset()
+      
+      // Hide message after 5 seconds with fade-out
+      setTimeout(function(){
+        msg.classList.remove('show')
+        setTimeout(function(){
+          msg.innerHTML = ""
+        }, 300) // Wait for fade-out transition to complete
+      }, 5000)
+      
+      // Send to server in background using captured form data
+      fetch(scriptURL, { method: 'POST', body: formData})
+        .then(response => {
+          console.log('Success!', response)
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  
+
+</body>
+</html>
