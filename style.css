@@ -473,6 +473,34 @@
     padding: 10px 28px;
     font-size: 15px;
   }
+
+/* Add Contact button next to phone number */
+.contact-phone-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--accent-hover);
+  background: transparent;
+  color: var(--accent-color);
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-contact:hover {
+  background: var(--accent-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
   
   .contact-right form {
     width: 100%;
