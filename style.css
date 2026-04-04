@@ -184,7 +184,63 @@
     font-size: 70px;
     margin-top: 0px;
   }
-  
+
+  .header-heading-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 24px 32px;
+    align-self: stretch;
+    justify-content: space-between;
+  }
+
+  .header-hero-copy {
+    flex: 1 1 280px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .header-hero-copy h1 {
+    margin: 0;
+  }
+
+  .header-hero-copy .typing-rotate {
+    margin: 0;
+  }
+
+  .header-hero-copy .intro-bio {
+    margin: 0;
+    margin-top: 16px;
+  }
+
+  .header-hero-copy .btn.btn2 {
+    margin: 0;
+    margin-top: 4px;
+  }
+
+  .header-wordart {
+    height: auto;
+    max-height: min(700px, 68vh);
+    width: auto;
+    max-width: min(1200px, 98vw);
+    object-fit: contain;
+    opacity: 0.82;
+    flex-shrink: 0;
+    margin-left: auto;
+    transform: translate(28px, -18px);
+  }
+
+  #header .social-icons-upper {
+    margin-top: calc(16px - 1in);
+  }
+
+  #header .social-icons-upper a {
+    top: -8px;
+  }
+
   .header-text p .grey-text {
     color: var(--text-secondary);
   }
@@ -209,9 +265,9 @@
     animation: blink 0.7s steps(1) infinite;
   }
   .social-icons-upper a{
-    position: relative;  /* or 'absolute' */
-    top: -30px;   /* moves up */
-    left: 25px;   /* moves right */
+    position: relative;
+    top: 0;
+    left: 25px;
     text-decoration: none;
     font-size: 30px;
     margin-right: 15px;
@@ -404,8 +460,10 @@
   .tech-track {
     display: flex;
     gap: 20px;
-    animation: scroll 12s linear infinite;
     width: max-content;
+    animation: scroll linear infinite;
+    /* Same scroll speed: duration scales with duplicated row length (item count) */
+    animation-duration: calc(var(--tech-count, 5) * 2.4s);
   }
 
   .tech-item {
@@ -687,7 +745,15 @@
     .header-text h1 {
       font-size: 52px;
     }
-    
+
+    .header-wordart {
+      max-height: min(560px, 62vh);
+      max-width: min(98vw, 1200px);
+      margin-left: 0;
+      align-self: center;
+      transform: translate(12px, -14px);
+    }
+
     .social-icons-upper a {
       left: 2.5px;
     }
