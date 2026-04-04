@@ -35,16 +35,18 @@
     <!-- Main header content -->
     <div class="container">
       <div class="header-text">
-        <!-- Main heading with highlighted name -->
-        <h1>Hi, I'm <span class="highlight">Aditya Ujawane</span></h1>
-        <!-- Typing animation text -->
-        <p class="typing-rotate"><span id="typed-text"></span><span class="cursor">|</span></p>
-        <!-- Introduction paragraph -->
-        <p class="intro-bio">
-          Computer Science student at SDSU passionate about full-stack development, AI, machine learning, and building real-world software solutions.
-        </p>
-        <!-- Resume download button -->
-        <a href="Aditya Ujawane Resume.pdf" download = "Aditya_Ujawane_Resume" class="btn btn2">Download CV</a>
+        <!-- Left: headline + typing + bio + CV | Right: wordart (no overlap) -->
+        <div class="header-heading-row">
+          <div class="header-hero-copy">
+            <h1>Hi, I'm <span class="highlight">Aditya Ujawane</span></h1>
+            <p class="typing-rotate"><span id="typed-text"></span><span class="cursor">|</span></p>
+            <p class="intro-bio">
+              Computer Science student at SDSU passionate about full-stack development, AI, machine learning, and building real-world software solutions.
+            </p>
+            <a href="Aditya Ujawane Resume.pdf" download = "Aditya_Ujawane_Resume" class="btn btn2">Download CV</a>
+          </div>
+          <img src="images/wordart_headshot.png" alt="Aditya Ujawane word art" class="header-wordart" />
+        </div>
       </div>
       <!-- Social media icons in header -->
       <div class="social-icons-upper">
@@ -147,17 +149,23 @@
       <div class="work-list">
         <div class="work">
           <div class="work-icon">
-            <i class="fa-solid fa-brain"></i>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
           </div>
           <div class="work-content">
-            <h3>AI Animal Classifier</h3>
-            <p class="work-desc">CNN image classifier trained on CIFAR-10 with 85%+ accuracy. REST API deployment.</p>
+            <h3>GradeFlow — AI Marketing Agent</h3>
+            <p class="work-desc">AI-driven marketing banners for educators—structured prompts, JSON pipelines, and fast generation via NanoBanana.</p>
             <div class="tech-slider">
-              <div class="tech-track">
+              <div class="tech-track" style="--tech-count: 5">
                 <div class="tech-item"><i class="fa-brands fa-python"></i> Python</div>
-                <div class="tech-item"><i class="fa-solid fa-fire"></i> PyTorch</div>
-                <div class="tech-item"><i class="fa-solid fa-server"></i> Flask</div>
-                <div class="tech-item"><i class="fa-solid fa-robot"></i> CNN</div>
+                <div class="tech-item"><i class="fa-solid fa-bolt"></i> FastAPI</div>
+                <div class="tech-item"><i class="fa-solid fa-layer-group"></i> Next.js</div>
+                <div class="tech-item"><i class="fa-brands fa-react"></i> React</div>
+                <div class="tech-item"><i class="fa-solid fa-image"></i> NanoBanana API</div>
+                <div class="tech-item"><i class="fa-brands fa-python"></i> Python</div>
+                <div class="tech-item"><i class="fa-solid fa-bolt"></i> FastAPI</div>
+                <div class="tech-item"><i class="fa-solid fa-layer-group"></i> Next.js</div>
+                <div class="tech-item"><i class="fa-brands fa-react"></i> React</div>
+                <div class="tech-item"><i class="fa-solid fa-image"></i> NanoBanana API</div>
               </div>
             </div>
             <a href="https://github.com/aujawane" target="_blank" class="work-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a>
@@ -165,17 +173,27 @@
         </div>
         <div class="work">
           <div class="work-icon">
-            <i class="fa-solid fa-wallet"></i>
+            <i class="fa-solid fa-link"></i>
           </div>
           <div class="work-content">
-            <h3>Expense Tracker</h3>
-            <p class="work-desc">Full-stack finance app with CRUD operations, charts, and secure user authentication.</p>
+            <h3>GigLink</h3>
+            <p class="work-desc">Freelance marketplace for gigs and profiles—REST APIs, JWT auth, uploads, and a React client on Vercel.</p>
             <div class="tech-slider">
-              <div class="tech-track">
-                <div class="tech-item"><i class="fa-brands fa-java"></i> Java</div>
-                <div class="tech-item"><i class="fa-solid fa-leaf"></i> Spring Boot</div>
-                <div class="tech-item"><i class="fa-solid fa-database"></i> MySQL</div>
-                <div class="tech-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+              <div class="tech-track" style="--tech-count: 7">
+                <div class="tech-item"><i class="fa-solid fa-bolt"></i> FastAPI</div>
+                <div class="tech-item"><i class="fa-brands fa-react"></i> React</div>
+                <div class="tech-item"><i class="fa-solid fa-database"></i> PostgreSQL</div>
+                <div class="tech-item"><i class="fa-solid fa-lock"></i> JWT</div>
+                <div class="tech-item"><i class="fa-solid fa-plug"></i> REST APIs</div>
+                <div class="tech-item"><i class="fa-solid fa-cloud"></i> Vercel</div>
+                <div class="tech-item"><i class="fa-brands fa-github"></i> GitHub Projects</div>
+                <div class="tech-item"><i class="fa-solid fa-bolt"></i> FastAPI</div>
+                <div class="tech-item"><i class="fa-brands fa-react"></i> React</div>
+                <div class="tech-item"><i class="fa-solid fa-database"></i> PostgreSQL</div>
+                <div class="tech-item"><i class="fa-solid fa-lock"></i> JWT</div>
+                <div class="tech-item"><i class="fa-solid fa-plug"></i> REST APIs</div>
+                <div class="tech-item"><i class="fa-solid fa-cloud"></i> Vercel</div>
+                <div class="tech-item"><i class="fa-brands fa-github"></i> GitHub Projects</div>
               </div>
             </div>
             <a href="https://github.com/aujawane" target="_blank" class="work-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a>
@@ -189,7 +207,11 @@
             <h3>Task Tracker</h3>
             <p class="work-desc">Real-time task management with JWT auth, live updates, and responsive design.</p>
             <div class="tech-slider">
-              <div class="tech-track">
+              <div class="tech-track" style="--tech-count: 4">
+                <div class="tech-item"><i class="fa-brands fa-react"></i> React</div>
+                <div class="tech-item"><i class="fa-brands fa-node-js"></i> Node.js</div>
+                <div class="tech-item"><i class="fa-solid fa-database"></i> MongoDB</div>
+                <div class="tech-item"><i class="fa-solid fa-lock"></i> JWT</div>
                 <div class="tech-item"><i class="fa-brands fa-react"></i> React</div>
                 <div class="tech-item"><i class="fa-brands fa-node-js"></i> Node.js</div>
                 <div class="tech-item"><i class="fa-solid fa-database"></i> MongoDB</div>
