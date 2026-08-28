@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/*
+  Design tokens.
+
+  Raw values live as plain CSS custom properties so they can be swapped at
+  runtime via the [data-theme] attribute on <html> (set before paint by the
+  inline script in app/layout.tsx). @theme inline exposes them to Tailwind
+  as color utilities (bg-canvas, text-ink, etc.) that automatically track
+  whichever theme is active -- no dark: variants required for color.
+*/
+
+:root {
+  --canvas: #faf8f5;
+  --surface: #f2efea;
+  --ink: #18160f;
+  --ink-secondary: #55524b;
+  --ink-muted: #726e60;
+  --hairline: #e3dfd6;
+  --accent: #3e5c1f;
+  --accent-foreground: #ffffff;
+  --focus: var(--accent);
+}
+
+[data-theme="dark"] {
+  --canvas: #121212;
+  --surface: #1c1c1c;
+  --ink: #f3f1ea;
+  --ink-secondary: #aca89e;
+  --ink-muted: #8b8679;
+  --hairline: #2b2b2b;
+  --accent: #8fbf4e;
+  --accent-foreground: #121212;
+  --focus: var(--accent);
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-ink-muted: var(--ink-muted);
+  --color-hairline: var(--hairline);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-focus: var(--focus);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Keeps anchor targets clear of the sticky nav (72px tall) when jumped to. */
+[id] {
+  scroll-margin-top: 88px;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-accent-foreground);
+}
+
+/* Single, consistent keyboard-focus treatment across the site. */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Fluid hero display size. ~48px at a 360px-wide phone up to ~56px at a
+   430px-wide phone, then continues scaling until it caps at 4.25rem
+   (68px, unchanged) around tablet width and above -- so the desktop size
+   is untouched while mobile no longer sits at an oversized, heavily
+   wrapping ~68px. */
+.text-display {
+  font-size: clamp(3rem, 0.43rem + 11.43vw, 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+/* Fluid supporting-copy size: reads clearly as body text next to the
+   headline. ~18px at a 360px phone up to 20px by ~430px and above. */
+.text-body-lg {
+  font-size: clamp(1.125rem, 0.48rem + 2.86vw, 1.25rem);
+  line-height: 1.6;
+}
+
+/* Theme toggle icon swap: keyed to the live [data-theme] attribute rather
+   than React state, so there is no hydration-mismatch risk. */
+html:not([data-theme="dark"]) .theme-icon-dark {
+  display: none;
+}
+html[data-theme="dark"] .theme-icon-light {
+  display: none;
+}

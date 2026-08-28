@@ -1,0 +1,82 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "identity"
+    "headline"
+    "copy"
+    "cta"
+    "portrait"
+    "social";
+  row-gap: 1.5rem;
+  align-items: start;
+}
+
+.identity {
+  grid-area: identity;
+}
+.headline {
+  grid-area: headline;
+}
+.copy {
+  grid-area: copy;
+}
+.cta {
+  grid-area: cta;
+}
+.portrait {
+  grid-area: portrait;
+}
+.social {
+  grid-area: social;
+}
+
+.portraitFrame {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 5;
+}
+
+/* Tablet: still a single stacked column (copy -> cta -> portrait), just
+   with more breathing room -- two columns get cramped before ~1024px. */
+@media (min-width: 640px) {
+  .portraitFrame {
+    max-width: 360px;
+  }
+}
+
+/* Desktop: asymmetric two-column composition. The portrait sits in its
+   own column spanning every text row, offset downward from the headline
+   so the pairing reads as deliberate, not a mirrored split-screen. */
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    grid-template-areas:
+      "identity portrait"
+      "headline portrait"
+      "copy     portrait"
+      "cta      portrait"
+      "social   portrait";
+    column-gap: 4rem;
+    row-gap: 1.75rem;
+  }
+
+  .portrait {
+    margin-top: 3rem;
+  }
+
+  .portraitFrame {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    column-gap: 6rem;
+  }
+
+  .portraitFrame {
+    max-width: 380px;
+  }
+}
