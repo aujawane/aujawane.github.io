@@ -94,6 +94,16 @@ body {
   line-height: 1.6;
 }
 
+/* Fluid section-level headline (Parfait, and future flagship sections).
+   Large and confident, but capped at 3.25rem (52px) -- well under the
+   hero's 4.25rem (68px) -- so no section headline competes with the
+   page's single h1. ~34px at a 360px phone up to ~52px from tablet up. */
+.text-section-display {
+  font-size: clamp(2.125rem, 0.84rem + 5.71vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
 /* Theme toggle icon swap: keyed to the live [data-theme] attribute rather
    than React state, so there is no hydration-mismatch risk. */
 html:not([data-theme="dark"]) .theme-icon-dark {

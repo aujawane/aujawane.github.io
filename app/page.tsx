@@ -1,4 +1,5 @@
 import { Hero } from "@/components/hero";
+import { ParfaitSection } from "@/components/parfait-section";
 import { SiteHeader } from "@/components/site-header";
 
 export default function Home() {
@@ -10,11 +11,13 @@ export default function Home() {
 
         {/*
           Selected Work anchor target for the nav link and the hero's
-          "View My Work" CTA. Intentionally empty -- Parfait and GradeFlow
-          are a separate, upcoming implementation phase built from their
-          own approved specs. No placeholder cards or lorem ipsum here.
+          "View My Work" CTA. Parfait is implemented; GradeFlow is a
+          separate, upcoming phase built from its own approved spec and
+          will be added here as a second child, after Parfait.
         */}
-        <section id="work" className="min-h-[50vh]" aria-label="Selected work" />
+        <section id="work" aria-label="Selected work">
+          <ParfaitSection />
+        </section>
       </main>
     </>
   );
